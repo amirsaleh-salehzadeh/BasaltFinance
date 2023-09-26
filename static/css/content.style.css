@@ -1,0 +1,33 @@
+.page-title {
+	text-align: center;
+	padding: 11px;
+	width: 100%;
+	color: #174c66;
+	font-weight: bold;
+}
+
+.page-title>img {
+	text-align: center;
+	padding: 33px;
+	height: 66px;
+	width: auto;
+}
+
+.page-title h2 {
+    font-size: 33px;
+    line-height: 66px;
+    display: inline-block;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+p.tab {
+	margin-left: 44px;
+}
+
+@media ( max-width :800px) {
+	.page-title h2 {
+		font-size: 27px;
+		line-height: 66px;
+		display: inline-block;
+	}
+}

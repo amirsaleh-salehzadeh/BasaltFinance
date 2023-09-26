@@ -1,0 +1,1 @@
+from django.urls import pathfrom . import viewsfrom rest_framework_swagger.views import get_swagger_viewapp_name = 'accountApp'urlpatterns = [    # ... (other URL patterns)    path('', views.accounts_lists, name='account_list'),    path('create/', views.account_create, name='account_create'),]

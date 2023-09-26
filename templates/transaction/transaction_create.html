@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+<html>
+<head>
+</head>
+<body>
+	 {% block content %}
+	 <script>
+	 function formSubmit() {
+
+	        // Get form data
+	        var formData = {
+	                'fromAccount' : $('select[name=fromAccount]').val(),
+	                'toAccount' : $('select[name=toAccount]').val(),
+	            'amount' : $('input[name=amount]').val(),
+	            'transactionType' : $('input[name=transactionType]').val()
+	        };
+	        var formData = $('#transaction-form').serialize();
+
+            apiURL = "{% url 'transactionApp:create_transaction_service' %}";
+            $.ajax({
+                type: 'POST',
+                url: apiURL,
+                data: formData,
+                dataType: 'json',
+                beforeSend : function(xhr, settings) {
+                    $(".frameLoding").fadeIn()
+                    if (!(/^http:.*/.test(settings.url) || /^https:.*/
+                            .test(settings.url))) {
+                        xhr.setRequestHeader("X-CSRFToken",
+                                getCookie('csrftoken'))
+                    }
+                },
+                success: function (data) {
+                    // Transaction created successfully
+                    alert('Transaction created successfully.');
+                    // You can perform additional actions here if needed
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    // Handle errors here
+                    console.error('Error:', textStatus, errorThrown);
+                    alert('Transaction creation failed.');
+                }
+            }).done(function(data) {
+	            alert('Transaction created successfully!');
+                $(".frameLoding").fadeOut()
+	        }).fail(function(data) {
+                $(".frameLoding").fadeOut()
+	            alert('Error creating transaction: ' + data.responseText);
+	        });
+	}
+
+	 </script>
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h2>Create Transaction</h2>
+            </div>
+            <form method="post" id="transaction-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="button" onclick="formSubmit()">Create</button>
+    </form>
+        </main>
+        {% endblock %}
+</body>
+</html>

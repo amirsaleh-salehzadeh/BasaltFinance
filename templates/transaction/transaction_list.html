@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        {% extends "base.html" %}
+        {% block content %}
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h2>Transaction List</h2>
+                <a class="btn btn-outline-primary" href="{% url 'transactionApp:create_transaction' %}">Create New Transaction</a>  {# Assuming you have an account creation page #}
+            </div>
+            <div class="row">
+                   <div class="container mt-4">
+        <h1 class="mb-4">Transaction List</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <!-- Add other transaction fields as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.fromAccount }}</td>
+                        <td>{{ transaction.toAccount }}</td>
+                        <td>{{ transaction.transactionType }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.date }}</td>
+                        <!-- Add other transaction fields as needed -->
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No transactions found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+</html>

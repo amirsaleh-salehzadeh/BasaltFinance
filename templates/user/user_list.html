@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        {% extends "base.html" %}
+        {% block content %}
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h2>User Lists</h2>
+                 <a class="btn btn-outline-primary" href="{% url 'userApp:create_user' %}">Create New User</a>  {# Assuming you have an account creation page #}
+            </div>
+           <div class="row">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col"></th>
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                     {% for user in users %}
+                           <tr>
+                                <th scope="row">{{ user.id }}</th>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.first_name }}</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                     {% endfor %}
+                       </tbody>
+                    </table>
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+</html>

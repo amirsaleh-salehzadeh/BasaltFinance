@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Search Results</title>
+</head>
+<body>
+    <h1>Transaction Search Results</h1>
+    
+    <form method="GET" action="{% url 'search_transactions' %}">
+        <label for="query">Search Transaction Type:</label>
+        <input type="text" id="query" name="query" value="{{ request.GET.query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for transaction in transactions %}
+            <li>{{ transaction.transaction_type }} of {{ transaction.amount }} on {{ transaction.date }}</li>
+        {% empty %}
+            <li>No transactions found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

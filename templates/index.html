@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        {% extends "base.html" %}
+        {% block title %}Basalt Project{% endblock %}
+        {% block content %}
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h2>Welcome to BASALT FINANCE APP</h2>
+                <p class="lead">We have recieved the following amount of works:</p>
+                <ul>
+                    <li><strong>Total Accounts in the System:</strong> {{ num_accounts }}</li>
+                    <li><strong>Total Transactions in the System:</strong> {{ num_transactions }}</li>
+                    <li></li>
+                    <li><strong>Number of my Accounts:</strong> {{ my_accounts }}</li>
+                    <li><strong>Number of my Transactions:</strong> {{ my_transactions }}</li>
+                </ul>
+            </div>
+        </main>
+        {% endblock %}
+    </body>
+</html>

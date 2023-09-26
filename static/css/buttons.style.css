@@ -1,0 +1,156 @@
+.action-button {
+	color: white;
+	background: linear-gradient(0deg, #040506, #151827);
+	border: 0 none;
+	border-radius: 11px;
+	cursor: pointer;
+	min-width: 130px;
+	font: 700 14px/40px "Roboto", sans-serif;
+	margin: 0 5px;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 100%;
+	-webkit-transition: background .2s ease-in, color .2s ease-in;
+	-moz-transition: background .2s ease-in, color .2s ease-in;
+	-o-transition: background .2s ease-in, color .2s ease-in;
+	-ms-transition: background .2s ease-in, color .2s ease-in;
+	transition: background .2s ease-in, color .2s ease-in;
+}
+
+.action-button.disabled, .action-button.disabled:hover {
+	background: linear-gradient(0deg, #7f8fa0, #8187a5);
+}
+
+.action-button.green {
+	background: linear-gradient(0deg, #098c1f, #23af0a);
+	color: rgb(255, 255, 255);
+}
+
+.action-button.green:hover {
+	background: linear-gradient(0deg, #23af0a, #098c1f);
+}
+
+.action-button.orange {
+	background: none;
+	border: 1px solid #e95109;
+	color: #e95109;
+}
+
+.action-button.red {
+	background: none;
+	border: none;
+	color: red;
+}
+
+.action-button.red:hover {
+	background: none;
+	background: linear-gradient(0deg, #920506, #a11827) !important;
+	border: none;
+	color: white;
+}
+
+.action-button-large {
+	background: linear-gradient(0deg, #fefefe, #e3f4fa);
+	border: 0 none;
+	border-radius: 11px;
+	cursor: pointer;
+	min-width: 130px;
+	margin: 0 5px;
+	text-transform: uppercase;
+	-webkit-transition: transform .2s ease-in, box-shadow .2s ease-in;
+	-moz-transition: transform .2s ease-in, box-shadow .2s ease-in;
+	-o-transition: transform .2s ease-in, box-shadow .2s ease-in;
+	-ms-transition: transform .2s ease-in, box-shadow .2s ease-in;
+	transition: transform .2s ease-in, box-shadow .2s ease-in;
+	width: 66%;
+	height: 66px;
+	box-shadow: -7px -7px 7px -7px #b0c6d4, 7px 7px 7px -7px #ffffff, inset
+		7px 7px 7px -7px #b0c6d4, inset -7px -7px 7px -7px #ffffff;
+}
+
+.action-button-large img {
+	height: 55px;
+	float: left;
+}
+
+.action-button-large span {
+	line-height: 55px;
+	font-size: 22px;
+	color: #174c66;
+	font-weight: bold;
+}
+
+.action-button:hover, .action-button:focus {
+	background: linear-gradient(0, #164d7a, #6a88a0);
+	color: rgb(255, 255, 255);
+}
+
+.action-button.orange:hover, .action-button.orange:focus {
+	background: linear-gradient(0, #e95109, #ff7600);
+	color: rgb(0, 0, 0);
+}
+
+.action-button-large:hover, .action-button-large:focus {
+	transform: scale(1.02);
+	background: linear-gradient(0deg, #fefefe, #e3f4fa);
+	box-shadow: none;
+}
+
+.btn-enternow {
+	margin-top: 5px;
+	color: white;
+}
+.hover-btn-effect {
+	cursor: pointer;
+	transition: .2s box-shadow ease-in, .2s transform ease-in;
+	-webkit-transition: .2s -webkit-box-shadow ease-in, .2s -webkit-transform ease-in;
+	-ms-transition: .2s -ms-box-shadow ease-in, .2s -ms-transform ease-in;
+	-o-transition: .2s box-shadow ease-in, .2s transform ease-in;
+	-moz-transition: .2s box-shadow ease-in, .2s transform ease-in;
+}
+.enter-now-btn-svg {
+	width: 177px;
+	height: auto;
+	margin-top: 9px;
+}
+
+.hover-btn-effect:hover {
+    box-shadow: 0px 7px 11px -11px black;
+    transform: scale(1.03);
+}
+
+.social-media-btn i {
+	padding: 11px;
+	font-size: 30px;
+	margin: 7px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 11px;
+	font-weight: normal;
+	cursor: pointer;
+	vertical-align: middle;
+    box-shadow: inset 2px 2px 6px -2px white;
+}
+
+.social-media-btn i:hover {
+	opacity: 0.7;
+}
+
+.fa-facebook {
+	background: linear-gradient(45deg, #433e61, #3B5998);
+	color: white;
+}
+
+.fa-youtube {
+	background: linear-gradient(45deg, #640000, #bb0000);
+	color: white;
+}
+
+.fa-instagram {
+	text-align: center;
+	color: #fff;
+	background: #d6249f;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,
+		#d6249f 60%, #285AEB 90%);
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+}

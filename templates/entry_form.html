@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        {% extends "base.html" %}
+        {% block title %}Artwork Submission Form{% endblock %}
+        {% block nav-submission %}<a class="nav-link active" href="{% url 'artwork:entry_form' %}">Submission <span class="sr-only">(current)</span></a>{% endblock%}
+        {% block content %}
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h2>Please fill in the following form to Submit your work:</h2>
+                <p class="lead"></p>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form action="{% url 'artwork:entry_form' %}" method="post" class="needs-validation" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h4 class="mb-3">Personal Information</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <lable for="firstname">First Name</lable>
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <lable for="surname">Surname</lable>
+                                <input type="text" class="form-control" id="surname" name="surname" placeholder="" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <lable for="email">email</lable>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="" required="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="parentname">Parent Name</lable>
+                                <input type="text" class="form-control" id="parentname" name="parentname" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="parentphone">Parent Phone</lable>
+                                <input type="tel" class="form-control" id="parentphone" name="parentphone" placeholder="" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <lable for="school">School</lable>
+                                <select class="custem-select d-block w-100" id="school" name="school" required="">
+                                    <option value="">Choose...</option>
+                                    {% for school in form.school.field.queryset %}
+                                    <option name="school">{{ school.name }}</option>
+                                    <option>
+                                        {% endfor %}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="teachername">Teacher Name</lable>
+                                <input type="text" class="form-control" id="teachername" placeholder="" name="teachername" value="" required="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="teacheremail">Teacher Email</lable>
+                                <input type="email" class="form-control" id="teacheremail" name="teacheremail" placeholder="you@example.com" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <lable for="dob">Date of Birth</lable>
+                                <input type="date" class="form-control" id="dob" name="dob" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="learnergrade">Learner Grade</lable>
+                                <input type="number" class="form-control" id="learnergrade" name="learnergrade" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <lable for="teacherphone">Teacher Phone</lable>
+                                <input type="tel" class="form-control" id="teacherphone" name="teacherphone" placeholder="" value="" required="">
+                            </div>
+                        </div>
+                        <br>
+                        <h4 class="mb-3">Artwork Information</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <lable for="workfile">Upload Work File</lable>
+                                <input type="file" class="form-control" id="workfile" name="workfile" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <lable for="worktitle">Work Title</lable>
+                                <input type="text" class="form-control" id="worktilte" name="worktitle" placeholder="" value="" required="">
+                            </div>
+                        </div>
+                        <br>
+                        <h4 class="mb-3">Please answer the following questions:</h4>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <lable for="question1">Question1</lable>
+                                <textarea class="form-control" id="question1" name="question1" rows="5">
+</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <lable for="question2">Question2</lable>
+                                <textarea class="form-control" id="question2" name="question2" rows="5">
+</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <lable for="question3">Question3</lable>
+                                <textarea class="form-control" id="question3" name="question3" rows="5">
+</textarea>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                            Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        {% endblock %}
+    </body>
+</html>

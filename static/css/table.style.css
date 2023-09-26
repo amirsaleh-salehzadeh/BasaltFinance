@@ -1,0 +1,42 @@
+.table-general-style {
+	margin: 11px;
+	font-size: 14px;
+}
+
+.table-general-style>thead {
+	background: white;
+}
+
+.table-general-style td {
+	padding: 7px;
+	vertical-align: middle;
+	border: none;
+}
+
+.table-general-style>tbody>tr:nth-child(even) {
+	background: #ffffff;
+	color: #226874;
+}
+
+.table-general-style>tbody>tr:nth-child(odd) {
+	background: #eaf7f9;
+	color: #226874;
+}
+
+.artwork-thumbnail {
+	display: none;
+}
+
+.photo-viewer {
+	position: fixed;
+	left: 11px;
+	border-radius: 11px;
+	width: 222px;
+	height: 222px;
+	width: 222px;
+}
+
+.photo-viewer img {
+	max-width: 100%;
+	max-height: 100%;
+}

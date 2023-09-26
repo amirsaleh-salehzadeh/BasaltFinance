@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% with version=0.77 %}
+<title>{% block title %} {% endblock title %}</title>
+<meta http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<link rel="stylesheet" href="/static/css/font-awesome/css/all.min.css">
+<link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap/bootstrap-select.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/constants.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/animation.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/buttons.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/form.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/table.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/menu.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/home.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/content.style.css' %}?ver={{ version }}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}?ver={{ version }}" rel="stylesheet">
+<script async=""
+    src="https://www.googletagmanager.com/gtag/js?id=UA-156942839-1"></script>
+    <script type="text/javascript">
+    var version = {{ version }}
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-156942839-1');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="confirmation-box-modal" tabindex="-1"
+            role="dialog" aria-labelledby="confirmation-box-modal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content card">
+                    <div class="modal-header card-header bg-success">
+                        <h5 class="modal-title text-white">
+                            <i class="fa fa-thumbs-up">&nbsp;&nbsp;&nbsp;</i>Form Submission
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body confirmation-message-content">body</div>
+                    <div class="modal-footer col-md-12">
+                        <button type="button" class="btn btn-success" id="confirmation-box-btn">
+                            <i class="fa fa-check-circle">&nbsp;&nbsp;&nbsp;</i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-outline-warning"
+                            data-dismiss="modal">
+                            <i class="fa fa-times-circle">&nbsp;&nbsp;&nbsp;</i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="success-message-modal" tabindex="-1"
+            role="dialog" aria-labelledby="success-message-modal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content card text-white bg-success">
+                    <div class="modal-header card-header">
+                        <h5 class="modal-title text-white" id="exampleModalLabel">
+                            <i class="fa fa-thumbs-up">&nbsp;&nbsp;&nbsp;</i>Succeed
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body success-message-content">body</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">
+                            <i class="fa fa-times-circle">&nbsp;&nbsp;&nbsp;</i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="error-message-modal" tabindex="-1"
+            role="dialog" aria-labelledby="success-message-modal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content card text-white bg-danger">
+                    <div class="modal-header card-header">
+                        <h5 class="modal-title text-white" id="exampleModalLabel">
+                            <i class="fa fa-thumbs-down">&nbsp;&nbsp;&nbsp;</i>Failed
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body error-message-content">body</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">
+                            <i class="fa fa-times-circle">&nbsp;&nbsp;&nbsp;</i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="frameLoding">
+            <div class="frame">
+                <div class="center">
+                    <div class="dot-1"></div>
+                    <div class="dot-2"></div>
+                    <div class="dot-3"></div>
+                    <div class="loading">
+                        <div class="loading-text">
+                            <span class="loading-text-words">L</span> <span
+                                class="loading-text-words">O</span> <span
+                                class="loading-text-words">A</span> <span
+                                class="loading-text-words">D</span> <span
+                                class="loading-text-words">I</span> <span
+                                class="loading-text-words">N</span> <span
+                                class="loading-text-words">G</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-screen-div"></div>
+        <nav
+            class="navbar navbar-expand-sm sticky-top navbar-light" >
+            <div class="navbar-header" style="background-color: black;">
+                <a class="navbar-brand" href="#"> <img id="enter-now-btn"
+                    src="/static/img/BASALTlogo.png" alt=""
+                    data-href="/" class="menu-item">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-light " style="margin: 0 auto;">
+                    {% if user.is_authenticated%}
+                    <li class="nav-item">
+                        {% block nav-home %}<a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>{% endblock %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'accountApp:account_list' %}">Accounts</a>
+                    </li>
+                                        {% if user.user_type != 1 %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'userApp:user_list' %}">User List</a>
+                    </li>
+                                        {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'transactionApp:transaction_list' %}">Transaction List</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-dark btn-sm"
+                            onclick="window.location.replace('{% url 'userApp:logout' %}')">
+                            <i class="fa fa-sign-out"></i>&nbsp;Logout
+                        </button>
+                        
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="navbar-nav navbar-right ml-auto" id="login-div">
+            </div>
+        </nav>
+    </div>
+    {% block content %} {% endblock %}
+</body>
+<script src="{% static 'js/jquery/jquery-3.4.1.min.js' %}"
+    type="text/javascript"></script>
+<script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"
+    type="text/javascript"></script>
+<script src="{% static 'js/bootstrap/validator.min.js' %}"
+    type="text/javascript"></script>
+<script src="{% static 'js/GSAP/TweenMax.min.js' %}"
+    type="text/javascript"></script>
+<script src="{% static 'js/bootstrap/bootstrap-select.min.js' %}"
+    type="text/javascript"></script>
+<script type="text/javascript"
+    src="/static/js/entry.form.js?ver={{ version }}"></script>
+<script type="text/javascript">
+    $(window).on("load", function() {
+        $(".frameLoding").fadeOut()
+        $(".frameLoding").css("background-color","rgba(255,255,255,.3)")
+        {%if request.GET.message != None %}
+            toggleMessageBox("{{ request.GET.message }}",{{ request.GET.T }})
+        {% endif %}
+    })
+</script>
+<script src="/static/js/basalt.js?ver={{ version }}"></script>
+{% endwith %}
+</html>

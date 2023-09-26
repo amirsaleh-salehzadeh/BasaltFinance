@@ -1,0 +1,116 @@
+.main-content-brain {
+	background-color: var(--main-color-green);
+}
+
+.brain-holder-div {
+    background-image: url(../img/bg/Backicons.svg);
+    background-size: 88%;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 33px 0;
+    background-position: 77% 13%;
+}
+
+.brain-holder-div img {
+    width: 70%;
+    height: auto;
+    margin-top: 24px;
+}
+
+.my-universe {
+	color: var(--main-color-dark-blue);
+	font-size: 40px;
+	text-align: center;
+    font-weight: bolder;
+	margin: 0 0 22px 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	line-height: 13px;
+}
+
+.comp-theme {
+	color: var(--main-color-pink);
+    font-size: 31px;
+    text-align: center;
+    font-weight: normal;
+	margin: 22px 0 11px 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.youtube-btn {
+	text-align: center;
+	margin-bottom: 22px;
+}
+.youtube-btn img{
+	width: 133px;
+	height: auto;
+}
+
+#banner-bottom-home {
+	background-color: var(--main-color-pink) !important;
+    height: 122px;
+    margin-bottom: 33px;
+    padding-top: 11px;
+}
+
+.mid-div-icons{
+	color: var(--main-color-green) !important;
+	font-size: 22px;
+	font-weight: bold;
+}
+.mid-div-icons img{
+	width: 44px;
+	height: 44px;
+	margin-right: 11px;
+}
+
+.col-md-8.mid-div-icons{
+	color: var(--main-color-green) !important;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.col-md-8.mid-div-icons img{
+	width: 44px;
+	height: 44px;
+	margin-right: 11px;
+}
+
+.mid-div-container .col-md-6, .mid-div-container .col-md-8 {
+	color: var(--main-color-dark-blue);
+	  text-align: justify;
+}
+
+.contact-title {
+	font-size: 33px;
+	color: var(--main-color-light-blue);
+	text-align: center;
+	font-weight: bold;
+}
+
+.contact-logo-holder {
+	width: 222px;
+	height: auto;
+}
+
+@media(max-width: 800px){
+	#timeCounterDivId ul li:before {
+		top: -13px;
+		width: 44px;
+	}
+	#timeCounterDivId ul li span {
+		top: -13px;
+		font-size: 23px;
+	}
+	
+	#timeCounterDivId ul li {
+		width: 44px;
+	}
+	
+	#timeCounterDivId ul {
+		padding: 0;
+	}
+	.mid-div-icons{
+	text-align: left !important;
+}
+}
