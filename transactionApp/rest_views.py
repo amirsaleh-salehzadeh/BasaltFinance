@@ -11,8 +11,8 @@ from drf_yasg import openapi
 from django.contrib.auth.decorators import login_required
 
 @swagger_auto_schema(
-    request_body=TransactionSerializer,  # Include request body schema if needed
-    responses={status.HTTP_201_CREATED: TransactionSerializer()},  # Define responses
+    request_body=TransactionSerializer, 
+    responses={status.HTTP_201_CREATED: TransactionSerializer()}, 
     operation_description="Create a new transaction",
     operation_summary="Create Transaction",
     manual_parameters=[
@@ -41,7 +41,7 @@ from django.contrib.auth.decorators import login_required
             name='transactionType',
             in_=openapi.IN_FORM,
             type=openapi.TYPE_STRING,
-            enum=["credit", "debit"],  # Define possible values if applicable
+            enum=["credit", "debit"],  
             description="Type of transaction (credit or debit)",
             required=True,
         ),
