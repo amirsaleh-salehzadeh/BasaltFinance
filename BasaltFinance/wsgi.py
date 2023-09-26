@@ -1,5 +1,5 @@
 """
-WSGI config for basalt project.
+WSGI config for BasaltFinance project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'basalt.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'BasaltFinance.settings')
 
 application = get_wsgi_application()
